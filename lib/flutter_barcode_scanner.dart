@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/services.dart';
 
 /// Scan mode which is either QR code or BARCODE
@@ -41,6 +40,8 @@ class FlutterBarcodeScanner {
     /// Get barcode scan result
     final barcodeResult =
         await _channel.invokeMethod('scanBarcode', params) ?? '';
+
+    cancelButtonText = "Okundu";
     return barcodeResult;
   }
 
